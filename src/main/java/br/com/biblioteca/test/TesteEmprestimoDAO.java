@@ -12,10 +12,10 @@ import java.util.List;
 
 public class TesteEmprestimoDAO {
 
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotecaPU");
+    private static final EntityManagerFactory emf =
+            Persistence.createEntityManagerFactory("bibliotecaPU");
 
     public static void main(String[] args) {
-        // Criar um aluno para associar aos empréstimos
         Aluno aluno = new Aluno();
         aluno.setMatriculaAluno(12345);
         aluno.setNome("João Silva");
@@ -56,5 +56,8 @@ public class TesteEmprestimoDAO {
         // 6. Deletar
         dao.deletar(emp1.getId());
         System.out.println("Empréstimo deletado");
+
+        emf.close();
+        EmprestimoDAO.fechar();
     }
 }

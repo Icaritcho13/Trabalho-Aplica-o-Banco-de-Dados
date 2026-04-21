@@ -1,0 +1,4 @@
+br\com\biblioteca\model\Emprestimo.class
+br\com\biblioteca\dao\EmprestimoDAO.class
+br\com\biblioteca\model\Aluno.class
+br\com\biblioteca\test\TesteEmprestimoDAO.class

@@ -9,7 +9,8 @@ import java.util.List;
 
 public class EmprestimoDAO {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotecaPU");
+    private static final EntityManagerFactory emf =
+            Persistence.createEntityManagerFactory("bibliotecaPU");
 
     public void salvar(Emprestimo emprestimo) {
         EntityManager em = emf.createEntityManager();
@@ -85,5 +86,9 @@ public class EmprestimoDAO {
         } finally {
             em.close();
         }
+    }
+
+    public static void fechar() {
+        emf.close();
     }
 }
